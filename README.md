@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Sistema de chamados utilizando firebase, react-toastify e context
+Sistema de chamados utilizando firebase, react-toastify, context e react-icons
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
