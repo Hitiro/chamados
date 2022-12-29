@@ -1,7 +1,8 @@
 import firebase from 'firebase/app';
-import 'firbase/auth';
+import 'firebase/auth';
+import 'firebase/firestore';
 
-const firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyCEhA4bBSXQFbPsOoKy9HcuZ1Ewv4DKWPk",
   authDomain: "chamados-6b44e.firebaseapp.com",
   projectId: "chamados-6b44e",
