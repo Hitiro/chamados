@@ -4,11 +4,9 @@ import Routes from './routes';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   )
 }
 
