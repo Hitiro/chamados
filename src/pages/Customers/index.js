@@ -48,7 +48,7 @@ export default function Customers() {
         <Title name="Clientes">
           <FiUser size={25} />
         </Title>
-        <div class="container">
+        <div className="container">
           <form className="form-profile customers" onSubmit={handleAdd}>
             <label>Nome fantasia</label>
             <input type="text" placeholder="Nome da empresa" value={nomeFantasia} onChange={(e) => setNomeFantasia(e.target.value)} />
