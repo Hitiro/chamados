@@ -1,12 +1,13 @@
 
 import { useState, useEffect, useContext } from 'react';
 
+import firebase from '../../services/firebaseConnection';
+import { useHistory, useParams } from 'react-router-dom'
+
 import Header from '../../components/Header';
 import Title from '../../components/Title';
 import { AuthContext } from '../../contexts/auth';
-import firebase from '../../services/firebaseConnection';
-import { toast, Toast } from 'react-toastify';
-import { useHistory, useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 import './new.css';
 import { FiPlusCircle } from 'react-icons/fi';
@@ -14,7 +15,7 @@ import { FiPlusCircle } from 'react-icons/fi';
 export default function New() {
 
   const { id } = useParams();
-  const { history } = useHistory();
+  const history = useHistory();
 
   const [assunto, setAssunto] = useState('Suporte');
   const [status, setStatus] = useState('Aberto');
@@ -64,7 +65,7 @@ export default function New() {
 
     loadCustomers();
 
-  }, [])
+  }, [id])
 
 
   async function loadId(lista) {
@@ -88,6 +89,10 @@ export default function New() {
 
   }
 
+  function goDashboard() {
+    history.push('/dashboard');
+  }
+
 
   async function handleRegister(e) {
     e.preventDefault();
@@ -107,13 +112,14 @@ export default function New() {
           toast.success('Atualizado com sucesso!');
           setCustomerSelected(0);
           setComplemento('');
-          // history.push('/dashboard');
-          history.push('/dashboard');
+          goDashboard();
         })
         .catch((error) => {
           console.log(error);
           toast.error('Opa, algum erro foi encontrado!')
         })
+
+      return;
 
     }
 
