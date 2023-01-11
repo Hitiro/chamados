@@ -1,15 +1,16 @@
 
 import { useEffect, useState } from 'react';
 
+import firebase from '../../services/firebaseConnection';
+
 import './dashboard.css'
 import Title from '../../components/Title';
 import Header from '../../components/Header';
+import Modal from '../../components/Modal';
 import { FiList, FiPlus, FiSearch, FiEdit2 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns'
 
-import firebase from '../../services/firebaseConnection';
-import Modal from '../../components/Modal';
 import { toast } from 'react-toastify';
 
 const listRef = firebase.firestore().collection('chamados').orderBy('created', 'desc');
